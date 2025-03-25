@@ -49,7 +49,6 @@
 ;; (unpin! t)
 
 (package! solaire-mode :disable t)
-;; (package! better-jumper :disable t)
 (package! spacious-padding)
 (package! eldoc-box)
 (package! zoom)
@@ -60,3 +59,5 @@
 
 (unpin! org-roam)
 (package! org-roam-ui)
+(package! org-fragtog)
+;; (package! xenops)
