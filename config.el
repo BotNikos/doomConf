@@ -129,6 +129,7 @@
   (setq org-startup-with-latex-preview t)
   (setq org-agenda-files '("~/org/" "~/org/work/" "~/org/daily/"))
   (setq org-latex-title-command "")
+  (setq org-hide-emphasis-markers t)
 
   (set-face-attribute 'org-document-title nil :height 1.5)
   (set-face-attribute 'org-document-info nil :height 1.3)
@@ -156,6 +157,13 @@
 	org-roam-ui-open-on-start t))
 
 (add-hook! org-mode 'org-fragtog-mode)
+(add-hook! org-mode 'org-appear-mode)
+
+(after! org-appear
+  (setq org-appear-autoemphasis t)
+  (setq org-appear-autolinks t)
+  (setq org-appear-autosubmarkers t)
+  (setq org-appear-autoentities t))
 
 ;;;; LSP ;;;;
 
@@ -176,6 +184,7 @@
 (map! :desc "Jump to evil mark" :leader :n "sr" #'evil-collection-consult-mark)
 
 ;;;; SQL ;;;;
+
 (setq sql-connection-alist
       '((fizdb16
 	 (sql-product 'postgres)
